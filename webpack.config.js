@@ -32,8 +32,10 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.css$/, loader: 'style-loader!css-loader!cssnext-loader' },
-      { test: /\.js$/, loader: 'babel', include: path.join(__dirname, 'lib') }
+      { test: /\.css$/, loader: 'style-loader!css-loader?!cssnext-loader' },
+      { test: /\.js$/, loader: 'babel', include: path.join(__dirname, 'lib') },
+      { test: /\.png$/, loader: "url-loader?limit=10000" },
+      { test: /\.jpg$/, loader: "file-loader" }
     ]
   },
   cssnext: {
