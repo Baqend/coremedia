@@ -8,10 +8,13 @@ var blobURL = 'mongodb://52.212.191.103:27017/blueprint_uapi_blobs';
 // Use connect method to connect to the Server
 
 var xml = require('./xml');
-var greatestDataTimestamp = 0; //1478654638190;
+var greatestDataTimestamp = 1478799425977; //1478654638190;
+var greatestNextBlobTimestamp = 1478654687259;
+var greatestBlobTimestamp = 1478654687259; //1478654638190;
+var startBlobId = "";
 
 exports.call = function(db, data, req) {
-  return syncImages(db);
+  return Promise.all([syncProducts(db), syncImages(db)]);
 };
 
 function syncImages(db) {
@@ -21,29 +24,49 @@ function syncImages(db) {
     var gridfs = new GridFSBucket(blobdb);
     var col = mongodb.collection('content');
 
-    return col.find({_id: "6300"}).toArray().then((result) => {
-      //result.forEach((meta) => {
-        var data = result[0].userDefined;
+    var limit = 100;
+
+    return col.find({"modificationDate.millis": {$gt: greatestBlobTimestamp}, _id: {$gt: startBlobId}, type: "CMPicture"}).sort({_id: 1}).limit(limit).toArray().then((result) => {
+      return Promise.all(result.map((meta) => {
+        startBlobId = meta._id;
+        if (meta.modificationDate.millis > greatestNextBlobTimestamp)
+          greatestNextBlobTimestamp = meta.modificationDate.millis;
+
+        var data = meta.userDefined;
         var downloadStream = gridfs.openDownloadStream(new ObjectID(data.data.id));
-      db.log({id: data.data.id})
+        //pull some data to let mongo begin streaming data
+        downloadStream.read(0);
+
         return new Promise((success, error) => {
           downloadStream.on('file', success);
           downloadStream.on('error', error);
+        }).then((fileMetadata) => {
+          var file = new db.File({
+            name: meta._id,
+            parent: '/picture',
+            mimeType: fileMetadata.contentType,
+            type: 'stream',
+            data: downloadStream,
+            size: fileMetadata.length
+          });
+          return file.upload({force: true});
         }).then((file) => {
-          db.log(file)
-          downloadStream.abort();
-          return {file: file};
+          var image = new db.Image(data);
+          image.key = meta._id;
+          image.file = file.id;
+          return image.save({force: true});
         });
-      //})
-
-
-
-      //return result;
+      }));
     }).then((result) => {
+      if (result.length < limit) {
+        greatestBlobTimestamp = greatestNextBlobTimestamp;
+        startBlobId = "";
+      }
+
       blobdb.close();
       mongodb.close();
-      return result;
-    })
+      return {count: result.length, timestamp: greatestNextBlobTimestamp};
+    });
   });
 }
 
@@ -66,7 +89,7 @@ function syncProducts(db) {
         product.sku = data.productCode;
         product.shortDesc = data.teaserText? data.teaserText.xml: null;
         product.longDesc = data.detailText? data.detailText.xml: null;
-        product.mediaLinks = [];
+        product.mediaLinks = data.pictures? data.pictures.map((id) => '/file/picture/' + id): [];
 
         return xml.parse(data.localSettings.xml).then((props) => {
           Object.assign(product, props.productProperties);
@@ -75,7 +98,7 @@ function syncProducts(db) {
       }));
     }).then((result) => {
       mongodb.close();
-      return {count: result.length};
+      return {count: result.length, timestamp: greatestDataTimestamp};
     });
   })
 }
