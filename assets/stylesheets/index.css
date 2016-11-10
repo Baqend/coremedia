@@ -5,9 +5,57 @@ https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-pract
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
+body {
+  font-family: Raleway, sans-serif;
+}
 
 #main {
-  padding-top: 70px;
+  padding-top: 40px;
+}
+
+.no-elements {
+  font-size: 30px;
+  padding: 200px 50px;
+}
+
+.comparison table {
+  margin: 40px 0;
+  table-layout: fixed;
+}
+
+.comparison table tr:first-child {
+  font-weight: bold;
+}
+
+.comparison table td:first-child {
+  font-weight: bold;
+  min-width: 150px;
+}
+
+.home {
+  background: url("../images/bg-image.jpg");
+  background-size: cover;
+  height: 550px;
+}
+
+.home h1{
+  color: #eee;
+  font-size: 60px;
+  padding: 50px 40px 10px;
+  font-weight: 300;
+}
+
+.home small {
+  font-size: 40px;
+}
+
+.home a {
+  margin-left: 40px;
+  color: #eee;
+}
+
+.header {
+  padding-top: 30px;
 }
 
 #product-overview .preview img {
@@ -31,4 +79,8 @@ html { box-sizing: border-box; }
 
 th {
   text-transform: capitalize;
+}
+
+.col-md-3 .btn {
+  margin-top: 15px;
 }

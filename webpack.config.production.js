@@ -37,7 +37,9 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!cssnext-loader') },
-      { test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'lib') }
+      { test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'lib') },
+      { test: /\.png$/, loader: "url-loader?limit=10000" },
+      { test: /\.jpg$/, loader: "file-loader" }
     ]
   },
   cssnext: {
