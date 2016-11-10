@@ -1,0 +1,90 @@
+[
+  {
+    "_id": "6314",
+    "parent": 1459,
+    "modificationDate": {
+      "_type": "compactcalendar",
+      "millis": 1478654638190,
+      "tz": "GMT"
+    },
+    "baseFolder": 1,
+    "editionDate": {
+      "_type": "compactcalendar",
+      "millis": 1478654638190,
+      "tz": "GMT"
+    },
+    "userDefined": {
+      "localSettings": {
+        "_type": "markup",
+        "xml": "<Struct xmlns=\"http://www.coremedia.com/2008/struct\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">\n<BooleanProperty Name=\"callToActionDisabled\">false</BooleanProperty>\n<StringProperty Name=\"callToActionCustomText\">Mehr Produktinformation</StringProperty>\n</Struct>",
+        "grammar": "coremedia-struct-2008"
+      },
+      "subjectTaxonomy": [
+        996
+      ],
+      "keywords": "",
+      "detailText": {
+        "_type": "markup",
+        "xml": "<div xmlns=\"http://www.coremedia.com/2003/richtext-1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><p/><p class=\"p--heading-3\">Beschreibung</p><p>Der Chef Bereich CR990 Deluxe Herd mit einem Gaskochfeld ist eine beliebte Wahl unter US Köchen wegen seiner professionelle Verarbeitungsqualität und Langlebigkeit. Die verbesserten Deluxe-Features sind jetzt eine überlegene, glatter Betriebs Roll-out-Grill, mit dem Sie Ihre Lebensmittel sicher drehen und bietet gleichzeitig die gleichen vier variable Höheneinstellungen, Heavy-Duty-Drehknöpfe und Edelstahl-Seitenteile ermöglicht.</p><p class=\"p--heading-3\">Hauptmerkmale</p><p>• Edelstahl-Warmhalteplatte<br/>• Multifunktions-Backofen<br/>• Zweikreisgrill<br/>• Massive Topfträger<br/>• 5 kW Zentralbrenner<br/>• Rollout grill<br/>• Massive Ofenroste<br/>• 3 Jahre Garantie</p><p class=\"p--heading-3\">Technische Spezifikationen</p><p/><p/><table dir=\"ltr\"><tbody><tr><td>Breite</td><td>1090 mm</td></tr><tr><td>Tiefe</td><td>600 mm</td></tr><tr><td>Höhe</td><td>913 mm</td></tr><tr><td>Gewicht</td><td>527 £</td></tr><tr><td>Kraftstoffarten</td><td>Gas</td></tr><tr><td>Hob-Konfiguration:</td><td>-</td></tr><tr><td>Brenner</td><td>5</td></tr><tr><td>Leistungen Hob</td><td>1x1.4KW, 3x1.85KW, 1x2.3KW</td></tr><tr><td>Total Power Bewertungen</td><td>Gas - 17.9kW (Gas)<br/>Electric - 7,4 kW (elektrisch)</td></tr><tr><td>Ofenkapazität (LH)</td><td>65 Liter</td></tr><tr><td>Ofenkapazität (RH)</td><td>78 Liter</td></tr><tr><td>Interne Ofen Abmessungen (LH)</td><td>-</td></tr><tr><td>B x T x H</td><td>433 x 380 x 380 mm</td></tr><tr><td>Interne Ofen Abmessungen (RH)</td><td>-</td></tr><tr><td>B x T x H</td><td>433 x 380 x 380 mm</td></tr><tr><td>Zubehör im Lieferumfang enthalten</td><td>Front Sockel und fünf Regalböden, darunter eine tiefe Regal, Wok Ring</td></tr></tbody></table><p/></div>",
+        "grammar": "coremedia-richtext-1.0"
+      },
+      "masterVersion": 1,
+      "viewtype": [],
+      "contexts": [
+        6294
+      ],
+      "locale": "de-DE",
+      "title": "",
+      "htmlDescription": "",
+      "pictures": [
+        6300
+      ],
+      "productName": "Chef Range CR990 Deluxe",
+      "master": [
+        5568
+      ],
+      "linkedSettings": [],
+      "teaserText": {
+        "_type": "markup",
+        "xml": "<div xmlns=\"http://www.coremedia.com/2003/richtext-1.0\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><p>Der Chef Range CR990 Deluxe Standherd mit Gasbrennern ist wegen seiner Qualität und Langlebigkeit eine beliebte Wahl unter US Köchen.  </p></div>",
+        "grammar": "coremedia-richtext-1.0"
+      },
+      "locationTaxonomy": [],
+      "productCode": "CC-CRD-990",
+      "htmlTitle": "",
+      "related": [
+        6306,
+        6310
+      ],
+      "downloads": [],
+      "teaserTitle": "",
+      "segment": "chef-range-cr990-deluxe",
+      "resourceBundles": []
+    },
+    "name": "Chef Range CR990 Deluxe Product",
+    "links": [
+      5568,
+      6306,
+      996,
+      6294,
+      6310,
+      6300
+    ],
+    "type": "CMProduct",
+    "publicationDate": {
+      "_type": "compactcalendar",
+      "millis": 1478654638190,
+      "tz": "GMT"
+    },
+    "versionNumber": 1,
+    "propLinks": [
+      "pictures:6300",
+      "subjectTaxonomy:996",
+      "related:6310",
+      "contexts:6294",
+      "master:5568",
+      "related:6306"
+    ],
+    "_version": 1
+  }
+]

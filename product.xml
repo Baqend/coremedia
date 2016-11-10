@@ -1,0 +1,19 @@
+<Struct xmlns="http://www.coremedia.com/2008/struct" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <BooleanProperty Name="callToActionDisabled">false</BooleanProperty>
+  <StructProperty Name="productProperties">
+    <Struct>
+      <StringProperty Name="height">1090</StringProperty>
+      <StringProperty Name="width">600</StringProperty>
+      <StringProperty Name="depth">913</StringProperty>
+      <StringProperty Name="hobConfig">star</StringProperty>
+      <StringProperty Name="weight">240,00</StringProperty>
+      <StringProperty Name="ovenLhCapacity">65</StringProperty>
+      <StringProperty Name="ovenRhCapacity">78</StringProperty>
+      <StringListProperty Name="fuel">
+        <String>gas</String>
+      </StringListProperty>
+      <IntProperty Name="burners">5</IntProperty>
+    </Struct>
+  </StructProperty>
+  <StringProperty Name="callToActionCustomText">Mehr Produktinformation</StringProperty>
+</Struct>

@@ -4,324 +4,80 @@
       "xmlns": "http://www.coremedia.com/2008/struct",
       "xmlns:xlink": "http://www.w3.org/1999/xlink"
     },
-    "StructProperty": [
+    "StringProperty": [
       {
+        "_": "1090",
         "$": {
-          "Name": "focusArea"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "0",
-                "$": {
-                  "Name": "x1"
-                }
-              },
-              {
-                "_": "0",
-                "$": {
-                  "Name": "y1"
-                }
-              },
-              {
-                "_": "1",
-                "$": {
-                  "Name": "x2"
-                }
-              },
-              {
-                "_": "1",
-                "$": {
-                  "Name": "y2"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "height"
+        }
       },
       {
+        "_": "600",
         "$": {
-          "Name": "transforms"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "b;a=0;c=1/crop;x=221;y=374;width=1745;height=2703",
-                "$": {
-                  "Name": "portrait_ratio20x31"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=113;y=497;width=1935;height=2580",
-                "$": {
-                  "Name": "portrait_ratio3x4"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=226;y=338;width=1822;height=1821",
-                "$": {
-                  "Name": "portrait_ratio1x1"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=0;y=436;width=1750;height=1313",
-                "$": {
-                  "Name": "landscape_ratio4x3"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=0;y=513;width=2048;height=1149",
-                "$": {
-                  "Name": "landscape_ratio16x9"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=0;y=610;width=2048;height=1026",
-                "$": {
-                  "Name": "landscape_ratio2x1"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=0;y=851;width=2048;height=821",
-                "$": {
-                  "Name": "landscape_ratio5x2"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=0;y=862;width=2048;height=769",
-                "$": {
-                  "Name": "landscape_ratio8x3"
-                }
-              },
-              {
-                "_": "b;a=0;c=1/crop;x=0;y=867;width=2048;height=513",
-                "$": {
-                  "Name": "landscape_ratio4x1"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "width"
+        }
       },
       {
+        "_": "913",
         "$": {
-          "Name": "relative"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "position;x1=0.10776942355889724;y1=0.12166666666666667;x2=0.9598997493734336;y2=1",
-                "$": {
-                  "Name": "portrait_ratio20x31"
-                }
-              },
-              {
-                "_": "position;x1=0.05513784461152882;y1=0.16166666666666665;x2=1;y2=1",
-                "$": {
-                  "Name": "portrait_ratio3x4"
-                }
-              },
-              {
-                "_": "position;x1=0.11027568922305764;y1=0.11;x2=1;y2=0.7016666666666667",
-                "$": {
-                  "Name": "portrait_ratio1x1"
-                }
-              },
-              {
-                "_": "position;x1=0;y1=0.14166666666666666;x2=0.8546365914786967;y2=0.5683333333333334",
-                "$": {
-                  "Name": "landscape_ratio4x3"
-                }
-              },
-              {
-                "_": "position;x1=0;y1=0.16666666666666666;x2=1;y2=0.54",
-                "$": {
-                  "Name": "landscape_ratio16x9"
-                }
-              },
-              {
-                "_": "position;x1=0;y1=0.19833333333333333;x2=1;y2=0.5316666666666666",
-                "$": {
-                  "Name": "landscape_ratio2x1"
-                }
-              },
-              {
-                "_": "position;x1=0;y1=0.27666666666666667;x2=1;y2=0.5433333333333333",
-                "$": {
-                  "Name": "landscape_ratio5x2"
-                }
-              },
-              {
-                "_": "position;x1=0;y1=0.28;x2=1;y2=0.53",
-                "$": {
-                  "Name": "landscape_ratio8x3"
-                }
-              },
-              {
-                "_": "position;x1=0;y1=0.2816666666666667;x2=1;y2=0.4483333333333333",
-                "$": {
-                  "Name": "landscape_ratio4x1"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "depth"
+        }
       },
       {
+        "_": "240,00",
         "$": {
-          "Name": "isDefault"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "false",
-                "$": {
-                  "Name": "portrait_ratio20x31"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "portrait_ratio3x4"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "portrait_ratio1x1"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "landscape_ratio4x3"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "landscape_ratio16x9"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "landscape_ratio2x1"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "landscape_ratio5x2"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "landscape_ratio8x3"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "landscape_ratio4x1"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "weight"
+        }
       },
       {
+        "_": "star",
         "$": {
-          "Name": "reflection"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "false",
-                "$": {
-                  "Name": "h"
-                }
-              },
-              {
-                "_": "false",
-                "$": {
-                  "Name": "v"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "hobConfig"
+        }
       },
       {
+        "_": "65",
         "$": {
-          "Name": "rotation"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "0",
-                "$": {
-                  "Name": "crude"
-                }
-              },
-              {
-                "_": "0",
-                "$": {
-                  "Name": "fine"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "ovenLhCapacity"
+        }
       },
       {
+        "_": "78",
         "$": {
-          "Name": "coloring"
-        },
-        "Struct": [
-          {
-            "StringProperty": [
-              {
-                "_": "0",
-                "$": {
-                  "Name": "brightness"
-                }
-              },
-              {
-                "_": "1",
-                "$": {
-                  "Name": "contrast"
-                }
-              }
-            ]
-          }
-        ]
+          "Name": "ovenRhCapacity"
+        }
       },
       {
+        "_": "More Product Information",
         "$": {
-          "Name": "commerce"
+          "Name": "callToActionCustomText"
+        }
+      }
+    ],
+    "StringListProperty": [
+      {
+        "$": {
+          "Name": "fuel"
         },
-        "Struct": [
-          {
-            "StringListProperty": [
-              {
-                "$": {
-                  "Name": "references"
-                },
-                "String": [
-                  "ibm:///catalog/product/PC_FLORAL_TOP"
-                ]
-              }
-            ]
-          }
+        "String": [
+          "gas"
         ]
+      }
+    ],
+    "IntProperty": [
+      {
+        "_": "5",
+        "$": {
+          "Name": "burners"
+        }
+      }
+    ],
+    "BooleanProperty": [
+      {
+        "_": "false",
+        "$": {
+          "Name": "callToActionDisabled"
+        }
       }
     ]
   }
