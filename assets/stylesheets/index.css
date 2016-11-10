@@ -82,6 +82,31 @@ body {
   width: 100%;
 }
 
+#product-overview .preview a {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+#product-overview .preview a:before {
+  opacity:1;
+  content: "";
+
+  transition: opacity 1.2s;
+  background: linear-gradient(to top,rgba(0,0,0,.4) 0,rgba(0,0,0,.3) 30%,rgba(0,0,0,0) 100%);
+
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+
+#product-overview .product:hover a:before {
+  opacity: 0.1;
+}
+
 #product-overview .info {
   padding: 15px;
 }
