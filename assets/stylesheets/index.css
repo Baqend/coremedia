@@ -76,7 +76,7 @@ body {
 #product-overview .preview {
   overflow: hidden;
   text-align: center;
-  padding-top: 90%;
+  padding-top: 200px;
   position: relative;
 }
 
@@ -84,16 +84,14 @@ body {
 #product-overview .preview a {
   display: block;
   height: 100%;
-  width: 200%;
-  margin-left: -50%;
+  width: 100%;
   position: absolute;
   top:0;
   text-align: center;
 }
 
 #product-overview .preview img {
-  height: 100%;
-  width: auto;
+  width: 100%;
 }
 
 #product-overview .preview a:before {
@@ -198,7 +196,7 @@ body {
 
 #product-overview .content .product-inner {
   border: 1px solid #ccc;
-  height: 750px;
+  height: 600px;
   overflow: hidden;
   position: relative;
 }
