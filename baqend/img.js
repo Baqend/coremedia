@@ -1,0 +1,98 @@
+/* Require additional modules and handlers here */
+var lwip = require('lwip');
+
+exports.get = function(db, req, res) {
+  //var host = req.query.host;
+  //var path = req.query.path;
+  var id = req.query.id;
+  var width = Number(req.query.width);
+  var height = Number(req.query.height);
+
+  return loadImage(db, id).then((response) => {
+    if (width || height)
+      return resizeImage(response, width, height);
+
+    return response;
+  }).then(function(response) {
+    //res.set('Surrogate-Control', 'max-age=3600');
+    res.set('Cache-Control', 'max-age=3600');
+    res.set('Content-Type', response.contentType);
+    res.send(response.data);
+  });
+};
+
+var IMG_OPTIONS = {
+  jpeg: {
+    quality: 80,
+  },
+  png: {
+    compression: 'high'
+  }
+};
+
+function resizeImage(img, width, height) {
+  var type = img.contentType.replace(/image\/(.*)/, '$1');
+
+  return new Promise((success, error) => {
+    lwip.open(img.data, type, (err, image) => {
+      if (err) {
+        error(err);
+        return;
+      }
+
+      if (!width)
+        width = image.width() * height / image.height();
+
+      if (!height)
+        height = image.height() * width / image.width();
+
+      image.batch()
+      .resize(width, height)
+      .toBuffer(type, IMG_OPTIONS[type], (err, buffer) => {
+        if (err) {
+          error(err);
+          return;
+        }
+
+        success({
+          contentType: img.contentType,
+          data: buffer
+        });
+      });
+    });
+  });
+}
+
+function loadImage(db, id) {
+  var file = new db.File(id);
+  return file.download('buffer').then(data => {
+    return {
+      data: data,
+      contentType: file.mimeType
+    }
+  });
+}
+
+function requestImage(host, path) {
+  return new Promise((success, error) => {
+    var httpReq = http.request({
+      method: 'GET',
+      hostname: host,
+      path: path
+    }, (httpRes) => {
+      var chunks = [];
+      httpRes.on('data', (chunk) => {
+        chunks.push(chunk);
+      });
+      httpRes.on('end', () => {
+        success({
+          contentType: httpRes.headers['content-type'],
+          data: Buffer.concat(chunks)
+        });
+      });
+    });
+
+    httpReq.on('error', error);
+    httpReq.end();
+  });
+}
