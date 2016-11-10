@@ -5,6 +5,7 @@ https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-pract
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
+
 #main {
   padding-top: 70px;
 }
@@ -26,4 +27,8 @@ html { box-sizing: border-box; }
   height: 250px;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+th {
+  text-transform: capitalize;
 }
