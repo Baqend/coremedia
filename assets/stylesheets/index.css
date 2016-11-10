@@ -9,6 +9,19 @@ body {
   font-family: Raleway, sans-serif;
 }
 
+.navbar-inverse {
+  background-color: rgba(65, 137, 221, 1);
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+  background-color: rgba(10, 66, 131, 1);
+  color: #fff;
+}
+.nav .active {
+  background-color: rgba(10, 66, 131, 1);
+}
+
 #main {
   padding-top: 40px;
 }
