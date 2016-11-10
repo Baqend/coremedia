@@ -9,6 +9,19 @@ body {
   font-family: Raleway, sans-serif;
 }
 
+.navbar-inverse {
+  background-color: rgba(65, 137, 221, 1);
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+  background-color: rgba(10, 66, 131, 1);
+  color: #fff;
+}
+.nav .active {
+  background-color: rgba(10, 66, 131, 1);
+}
+
 #main {
   padding-top: 40px;
 }
@@ -63,6 +76,23 @@ body {
   max-height: 100%;
 }
 
+#product-overview .rating {
+  text-align: center;
+  font-size: 36px;
+}
+
+#product-overview .rating .label {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px;
+}
+
+#product-overview .rating .stars {
+  margin-top: 21px;
+  text-align: center;
+  color: gold;
+}
+
 #product-overview .search {
   margin-top: 50px;
 }
@@ -80,6 +110,13 @@ body {
 #product-overview .content .product:last-child {
   border: none;
 }
+
+
+#product-detail img {
+  max-width: 100%;
+  /*max-height: 100%;*/
+}
+
 
 th {
   text-transform: capitalize;
