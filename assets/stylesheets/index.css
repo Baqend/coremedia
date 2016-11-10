@@ -5,7 +5,25 @@ https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-pract
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-
 #main {
   padding-top: 70px;
+}
+
+#product-overview .preview img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#product-overview .search {
+  margin-top: 50px;
+}
+
+#product-overview .content {
+  margin-top: 50px;
+}
+
+#product-overview .content .product {
+  height: 250px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
