@@ -72,9 +72,13 @@ body {
 }
 
 #product-overview .content .product {
-  height: 250px;
-  padding: 10px;
+  height: 200px;
+  padding: 20px;
   border-bottom: 1px solid #ccc;
+}
+
+#product-overview .content .product:last-child {
+  border: none;
 }
 
 th {
