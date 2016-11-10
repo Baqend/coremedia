@@ -63,6 +63,23 @@ body {
   max-height: 100%;
 }
 
+#product-overview .rating {
+  text-align: center;
+  font-size: 36px;
+}
+
+#product-overview .rating .label {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px;
+}
+
+#product-overview .rating .stars {
+  margin-top: 21px;
+  text-align: center;
+  color: gold;
+}
+
 #product-overview .search {
   margin-top: 50px;
 }
