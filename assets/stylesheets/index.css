@@ -9,3 +9,7 @@ html { box-sizing: border-box; }
 #main {
   padding-top: 70px;
 }
+
+th {
+  text-transform: capitalize;
+}
