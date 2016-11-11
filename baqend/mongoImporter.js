@@ -12,10 +12,26 @@ var greatestDataTimestamp = 1478799425977; //1478654638190;
 var greatestNextBlobTimestamp = 1478654687259;
 var greatestBlobTimestamp = 1478654687259; //1478654638190;
 var startBlobId = "";
+var lastResult = {};
 
 exports.call = function(db, data, req) {
-  return Promise.all([syncProducts(db), syncImages(db)]);
+  clearTimeout(global.interval);
+
+  syncInterval(db);
+
+  return lastResult;
 };
+
+function syncInterval(db) {
+  Promise.all([syncProducts(db), syncImages(db)]).then(result => {
+    db.clear();
+    db.log('Import completed:', result)
+  }).catch((e) => {db.log.error('Import error:', e); return {error: e} }
+  ).then((result) => {
+    lastResult = result;
+    global.interval = setTimeout(syncInterval.bind(this, db), 10000);
+  });
+}
 
 function syncImages(db) {
   return Promise.all([MongoClient.connect(dataURL), MongoClient.connect(blobURL)]).then(dbs => {
