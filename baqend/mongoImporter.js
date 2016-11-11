@@ -106,7 +106,8 @@ function syncProducts(db) {
         product.shortDesc = data.teaserText? data.teaserText.xml: null;
         product.longDesc = data.detailText? data.detailText.xml: null;
         product.mediaLinks = data.pictures? data.pictures.map((id) => '/file/picture/' + id): [];
-        product.search = product.title.toLowerCase() + ' ' + strip_tags(product.longDesc.toLowerCase());
+        //product.search = product.title.toLowerCase() + ' ' + strip_tags(product.longDesc.toLowerCase());
+        product.search = product.title.toLowerCase();
 
         return xml.parse(data.localSettings.xml).then((props) => {
           Object.assign(product, props.productProperties);

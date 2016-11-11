@@ -24,7 +24,7 @@ body {
 }
 
 #main {
-  padding-top: 40px;
+  padding-top: 39px;
 }
 
 .no-elements {
@@ -181,6 +181,18 @@ body {
   color: gold;
 }
 
+#product-overview .rating .stars span {
+  cursor: pointer;
+}
+
+#product-overview .rating .stars span:hover {
+  color: blue;
+}
+
+#product-overview .rating .stars span:active {
+
+}
+
 #product-overview .search {
   margin-top: 50px;
 }
@@ -221,3 +233,4 @@ th {
 .col-md-3 .btn {
   margin-top: 15px;
 }
+
