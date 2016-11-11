@@ -5,8 +5,8 @@ exports.call = function(db, data, req) {
     products.forEach(function(product) {
       var rating = new db.Rating();
       rating.id = product.key;
-      rating.ratings = 1;
-      rating.stars = 5;
+      rating.ratings = 0;
+      rating.stars = 0;
       rating.save();
     });
   });
