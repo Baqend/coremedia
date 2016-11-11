@@ -26,7 +26,7 @@ function syncInterval(db) {
   Promise.all([syncProducts(db), syncImages(db)]).then(result => {
     db.clear();
     db.log('Import completed:', result)
-  }).catch((e) => {db.log.error('Import error:', e); return {error: e} }
+  }).catch((e) => {db.log.error('Import error %s:', e.message, e); return {error: e} }
   ).then((result) => {
     lastResult = result;
     global.interval = setTimeout(syncInterval.bind(this, db), 10000);
@@ -96,9 +96,10 @@ function syncProducts(db) {
           greatestDataTimestamp = obj.modificationDate.millis;
 
         var data = obj.userDefined;
-        var product = db.Product();
+        var product = db.getReference('Product', obj._id);
+        var meta = db.util.Metadata.get(product);
+        meta.setDirty();
 
-        product.key = obj._id;
         product.version = obj.versionNumber;
         product.locale = data.locale;
         product.title = data.productName;
@@ -106,6 +107,7 @@ function syncProducts(db) {
         product.shortDesc = data.teaserText? data.teaserText.xml: null;
         product.longDesc = data.detailText? data.detailText.xml: null;
         product.mediaLinks = data.pictures? data.pictures.map((id) => '/file/picture/' + id): [];
+        product.related = data.related? data.related.map(id => db.getReference('Product', "" + id)): [];
         //product.search = product.title.toLowerCase() + ' ' + strip_tags(product.longDesc.toLowerCase());
         product.search = product.title.toLowerCase();
 
