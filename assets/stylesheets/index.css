@@ -111,15 +111,14 @@ body {
   border: none;
 }
 
-
 #product-detail img {
   max-width: 100%;
-  /*max-height: 100%;*/
+  max-height: 100%;
 }
 
 #product-comparison img {
   max-width: 100%;
-  /*max-height: 100%;*/
+  max-height: 100%;
 }
 th {
   text-transform: capitalize;
