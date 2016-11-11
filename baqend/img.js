@@ -10,12 +10,12 @@ exports.get = function(db, req, res) {
 
   return loadImage(db, id).then((response) => {
     if (width || height)
-      return resizeImage(response, width, height);
+      return resizeImage(db, response, width, height);
 
     return response;
   }).then(function(response) {
     //res.set('Surrogate-Control', 'max-age=3600');
-    res.set('Cache-Control', 'max-age=3600');
+    res.set('Cache-Control', 'max-age=0');
     res.set('Content-Type', response.contentType);
     res.send(response.data);
   });
@@ -30,7 +30,7 @@ var IMG_OPTIONS = {
   }
 };
 
-function resizeImage(img, width, height) {
+function resizeImage(db, img, width, height) {
   var type = img.contentType.replace(/image\/(.*)/, '$1');
 
   return new Promise((success, error) => {
@@ -40,25 +40,44 @@ function resizeImage(img, width, height) {
         return;
       }
 
-      if (!width)
-        width = image.width() * height / image.height();
-
-      if (!height)
-        height = image.height() * width / image.width();
+      var ratio = (1.0 * image.width()) / image.height();
+      var scaleWidth = image.width();
+      var scaleHeight = image.height();
+      if (width && height) {
+        if ((1.0 * width) / height < ratio) {
+          scaleWidth = height * ratio;
+          scaleHeight = height;
+        } else {
+          scaleWidth = width;
+          scaleHeight = width / ratio;
+        }
+      } else {
+        if (!width)
+          scaleWidth = image.width() * height / image.height();
+        else
+          scaleWidth = width;
+        if (!height)
+          scaleHeight = image.height() * width / image.width();
+        else
+          scaleHeight = height;
+        width = scaleWidth;
+        height = scaleHeight;
+      }
 
       image.batch()
-      .resize(width, height)
-      .toBuffer(type, IMG_OPTIONS[type], (err, buffer) => {
-        if (err) {
-          error(err);
-          return;
-        }
+        .resize(scaleWidth, scaleHeight)
+        .crop(width, height)
+        .toBuffer(type, IMG_OPTIONS[type], (err, buffer) => {
+          if (err) {
+            error(err);
+            return;
+          }
 
-        success({
-          contentType: img.contentType,
-          data: buffer
+          success({
+            contentType: img.contentType,
+            data: buffer
+          });
         });
-      });
     });
   });
 }
