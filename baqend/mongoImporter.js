@@ -29,7 +29,7 @@ function syncInterval(db) {
   }).catch((e) => {db.log.error('Import error %s:', e.message, e); return {error: e} }
   ).then((result) => {
     lastResult = result;
-    global.interval = setTimeout(syncInterval.bind(this, db), 10000);
+    global.interval = setTimeout(syncInterval.bind(this, db), 1000);
   });
 }
 
