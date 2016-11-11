@@ -90,6 +90,7 @@ function syncProducts(db) {
         product.shortDesc = data.teaserText? data.teaserText.xml: null;
         product.longDesc = data.detailText? data.detailText.xml: null;
         product.mediaLinks = data.pictures? data.pictures.map((id) => '/file/picture/' + id): [];
+        product.search = product.title.toLowerCase() + ' ' + strip_tags(product.longDesc.toLowerCase());
 
         return xml.parse(data.localSettings.xml).then((props) => {
           Object.assign(product, props.productProperties);
@@ -101,4 +102,15 @@ function syncProducts(db) {
       return {count: result.length, timestamp: greatestDataTimestamp};
     });
   })
+}
+
+function strip_tags(input, allowed) {
+  // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+  allowed = (((allowed || '') + '').toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('');
+
+  var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
+
+  return input.replace(tags, function ($0, $1) {
+    return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : ''
+  });
 }
