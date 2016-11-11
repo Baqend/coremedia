@@ -220,6 +220,28 @@ body {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  #product-overview .content {
+    margin-top: 0;
+  }
+  #product-overview .lead{
+    text-align: left;
+    padding-top: 10px;
+  }
+  #product-overview .content .product-inner {
+    height: 400px;
+  }
+  #product-overview .content .product-inner .desc {
+    display: none;
+  }
+  #product-overview .content .product-inner .rating div {
+    display: inline-block;
+  }
+  #product-overview .content .product-inner .rating .label {
+    vertical-align: middle;
+  }
+}
+
 #product-overview .content .product:last-child {
   border: none;
 }
