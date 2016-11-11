@@ -23,6 +23,17 @@ body {
   background-color: rgba(10, 66, 131, 1);
 }
 
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+  color: #ffffff;
+  background-color: rgba(10, 66, 131, 1);
+}
+
+.navbar-brand.active {
+  background-color: rgba(10, 66, 131, 1);
+}
+
+
 #main {
   padding-top: 39px;
 }
@@ -54,10 +65,28 @@ a:hover {
   min-width: 150px;
 }
 
+
 .home {
+  min-height: 250px;
+}
+
+
+@media (min-width : 1200px) {
+  .home {
+    min-height: 550px;
+  }
+}
+
+.home:before {
+  content: "";
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   background: url("../images/bg-image.jpg");
   background-size: cover;
-  height: 550px;
 }
 
 .home h1{
@@ -228,6 +257,28 @@ a:hover {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  #product-overview .content {
+    margin-top: 0;
+  }
+  #product-overview .lead{
+    text-align: left;
+    padding-top: 10px;
+  }
+  #product-overview .content .product-inner {
+    height: 400px;
+  }
+  #product-overview .content .product-inner .desc {
+    display: none;
+  }
+  #product-overview .content .product-inner .rating div {
+    display: inline-block;
+  }
+  #product-overview .content .product-inner .rating .label {
+    vertical-align: middle;
+  }
+}
+
 #product-overview .content .product:last-child {
   border: none;
 }
@@ -248,9 +299,6 @@ th {
 .col-md-3 .btn {
   margin-top: 15px;
 }
-
-
-
 
 
 @keyframes neon3 {
