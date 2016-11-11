@@ -15,7 +15,7 @@ exports.get = function(db, req, res) {
     return response;
   }).then(function(response) {
     //res.set('Surrogate-Control', 'max-age=3600');
-    res.set('Cache-Control', 'max-age=0');
+    res.set('Cache-Control', 'max-age=300');
     res.set('Content-Type', response.contentType);
     res.send(response.data);
   });
