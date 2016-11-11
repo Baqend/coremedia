@@ -27,6 +27,14 @@ body {
   padding-top: 39px;
 }
 
+a {
+  color: rgba(65, 137, 221, 1);
+}
+
+a:hover {
+  color: rgba(10, 66, 131, 1);
+}
+
 .no-elements {
   font-size: 30px;
   padding: 200px 50px;
