@@ -15,7 +15,7 @@
   "scripts": {
     "build": "npm run clean && webpack",
     "clean": "rimraf dist",
-    "deploy": "npm run dist && gh-pages -d dist",
+    "deploy": "npm run dist && baqend deploy --files -f dist coremedia",
     "dist": "npm run clean && set NODE_ENV=production&& webpack --config webpack.config.production.js",
     "lint": "eslint lib",
     "start": "npm run build && node server.js",
@@ -23,7 +23,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "baqend": "2.4.2",
+    "baqend": "^2.7.1",
     "classnames": "~2.2.3",
     "history": "~1.17.0",
     "parse-link-header": "~0.4.1",
