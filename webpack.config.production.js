@@ -19,6 +19,7 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       },
+      'CONNECT': "''",
       '__DEVTOOLS__': false
     }),
     new webpack.optimize.UglifyJsPlugin({

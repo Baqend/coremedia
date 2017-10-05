@@ -21,6 +21,7 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       },
+      'CONNECT': "'https://coremedia.app.baqend.com/'",
       '__DEVTOOLS__': process.env.DEVTOOLS === 'true' ? true : false
     }),
     new HtmlWebpackPlugin({
