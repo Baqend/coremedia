@@ -14,13 +14,16 @@
   },
   "scripts": {
     "build": "npm run clean && webpack",
+    "build-local": "npm run clean && webpack --config webpack.config.local.js",
     "clean": "rimraf dist",
     "deploy": "npm run dist && baqend deploy --files -f dist coremedia",
-    "dist": "npm run clean && set NODE_ENV=production&& webpack --config webpack.config.production.js",
+    "dist": "npm run clean && set NODE_ENV=production && webpack --config webpack.config.production.js",
     "lint": "eslint lib",
     "start": "npm run build && node server.js",
+    "start-local": "npm run build-local && node server.js",
     "start:devtools": "npm run build && set DEVTOOLS=true&& node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "schema-deploy": "baqend schema upload http://localhost:8080/v1"
   },
   "dependencies": {
     "baqend": "^2.7.1",

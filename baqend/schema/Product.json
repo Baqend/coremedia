@@ -1,0 +1,132 @@
+{
+  "class": "/db/Product",
+  "superClass": "/db/Object",
+  "acl": {
+    "schemaAdd": {
+      "/db/Role/1": "allow"
+    },
+    "schemaReplace": {
+      "/db/Role/1": "allow"
+    },
+    "schemaSubclass": {
+      "/db/Role/1": "allow"
+    }
+  },
+  "fields": {
+    "title": {
+      "name": "title",
+      "type": "/db/String",
+      "order": 0
+    },
+    "sku": {
+      "name": "sku",
+      "type": "/db/String",
+      "order": 1
+    },
+    "longDesc": {
+      "name": "longDesc",
+      "type": "/db/String",
+      "order": 2
+    },
+    "shortDesc": {
+      "name": "shortDesc",
+      "type": "/db/String",
+      "order": 3
+    },
+    "mediaLinks": {
+      "name": "mediaLinks",
+      "type": "/db/collection.List[/db/String]",
+      "order": 4
+    },
+    "height": {
+      "name": "height",
+      "type": "/db/Double",
+      "order": 5
+    },
+    "width": {
+      "name": "width",
+      "type": "/db/Double",
+      "order": 6
+    },
+    "depth": {
+      "name": "depth",
+      "type": "/db/Double",
+      "order": 7
+    },
+    "weight": {
+      "name": "weight",
+      "type": "/db/Double",
+      "order": 8
+    },
+    "fuel": {
+      "name": "fuel",
+      "type": "/db/collection.Set[/db/String]",
+      "order": 9
+    },
+    "burners": {
+      "name": "burners",
+      "type": "/db/Integer",
+      "order": 10
+    },
+    "hobConfig": {
+      "name": "hobConfig",
+      "type": "/db/String",
+      "order": 11
+    },
+    "ovenLhCapacity": {
+      "name": "ovenLhCapacity",
+      "type": "/db/Double",
+      "order": 12
+    },
+    "ovenRhCapacity": {
+      "name": "ovenRhCapacity",
+      "type": "/db/Double",
+      "order": 13
+    },
+    "ovenLhHeight": {
+      "name": "ovenLhHeight",
+      "type": "/db/Double",
+      "order": 14
+    },
+    "ovenLhWidth": {
+      "name": "ovenLhWidth",
+      "type": "/db/Double",
+      "order": 15
+    },
+    "ovenLhDepth": {
+      "name": "ovenLhDepth",
+      "type": "/db/Double",
+      "order": 16
+    },
+    "ovenRhHeight": {
+      "name": "ovenRhHeight",
+      "type": "/db/Double",
+      "order": 17
+    },
+    "ovenRhWidth": {
+      "name": "ovenRhWidth",
+      "type": "/db/Double",
+      "order": 18
+    },
+    "ovenRhDepth": {
+      "name": "ovenRhDepth",
+      "type": "/db/Double",
+      "order": 19
+    },
+    "locale": {
+      "name": "locale",
+      "type": "/db/String",
+      "order": 20
+    },
+    "search": {
+      "name": "search",
+      "type": "/db/String",
+      "order": 21
+    },
+    "related": {
+      "name": "related",
+      "type": "/db/collection.List[/db/Product]",
+      "order": 22
+    }
+  }
+}
