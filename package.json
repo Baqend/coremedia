@@ -16,6 +16,7 @@
     "build": "npm run clean && webpack",
     "clean": "rimraf dist",
     "deploy": "npm run dist && baqend deploy --files -f dist coremedia",
+    "deploy-local": "npm run dist && baqend deploy --files -f dist http://localhost:8080/v1",
     "dist": "npm run clean && set NODE_ENV=production && webpack --config webpack.config.production.js",
     "lint": "eslint lib",
     "start": "node server.js",
